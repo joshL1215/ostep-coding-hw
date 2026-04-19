@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -g
-TARGETS = basic_fork file_desc_fork without_wait with_wait exec
+TARGETS = basic_fork file_desc_fork without_wait with_wait exec with_waitpid
 
 all: $(TARGETS)
 
@@ -17,6 +17,9 @@ exec: exec.o
 	$(CC) $(CFLAGS) -o $@ $^
 
 with_wait: with_wait.o
+	$(CC) $(CFLAGS) -o $@ $^
+
+with_waitpid: with_waitpid.o
 	$(CC) $(CFLAGS) -o $@ $^
 
 clean: 
