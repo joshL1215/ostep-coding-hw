@@ -4,9 +4,8 @@
 
 int main(void) {
     pid_t pid = fork();
-
     if (pid == 0) {
-        close(STDOUT_FILENO);
+        close(STDERR_FILENO);
         printf("attempting to printf to stdout\n");
     }
 
